@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airkos - Agjencia e Udhëtimeve</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #bfd5ff;
+        }
+
+        .bg-image {
+            background-image: url("foto1.jpg"); /* Replace with aurora image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+        }
+
+        .content-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center; /* Center vertically */
+            padding: 50px;
+            margin-left: 50px;
+            color: white;
+        }
+
+        .content {
+            max-width: 600px;
+            margin-right: 50px; /* Space between content and form */
+        }
+
+        .content h1 {
+            font-family: 'Montserrat', sans-serif; /* Montserrat for brand */
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .btn-custom {
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-size: 1rem;
+            margin: 10px;
+        }
+
+        .btn-book {
+            background-color: #22a6b3;
+            color: white;
+        }
+
+        .btn-destinations {
+            background-color: #22a6b3;
+            color: white;
+        }
+
+        .navbar {
+            background: rgb(0, 0, 0, 0.4); /* Transparent background */
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+            border-bottom: 2px solid #002f86; /* Border line */
+        }
+
+        .navbar-nav .nav-link {
+            background-color: rgb(63, 130, 206, 0.1);
+            color: white !important;
+            font-size: 1rem;
+            margin: 0 10px;
+            transition: transform 0.2s; /* Transition for hover */
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: hsla(239, 45%, 53%, 0.4);
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+
+        .navbar-brand {
+            color: #22a6b3 !important;
+            font-family: 'Montserrat', sans-serif; /* Brand font */
+            font-size: 2rem; /* Brand font size */
+        }
+
+        .social-icons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 10px;
+        }
+
+        hr {
+            border-color: white;
+            width: 100%;
+            border-width: 2px;
+        }
+
+        /* Signup Form */
+        .signup-form {
+            height: 420px; ;
+            width: 500px;
+            align-items: left;
+            margin-left: 200px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+        }
+
+
+        .signup-form h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem; /* Increased title size */
+        }
+        {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .header h1 {
+            color: #2196b9;
+            font-weight: bold;
+        }
+        .header h3 {
+            color: #6c757d;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #6bd1c4;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .number {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #8ea7ec;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .footer button {
+            background-color: white;
+            color: #7ba3d8;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .content {
+            max-width: 50%;
+        }
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333333;
+        }
+        .content p {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.5;
+        }
+        .content .highlight {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333333;
+            margin: 20px 0;
+        }
+        .content .highlight span {
+            color: #00fff7;
+        }
+        .content .buttons {
+            margin-top: 20px;
+        }
+        .content .buttons .btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        .content .buttons .btn-primary {
+            background-color: #7dcff9;
+            border: none;
+        }
+        .content .buttons .btn-primary:hover {
+            background-color: #98dffb;
+        }
+        .content .buttons .btn-secondary {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            color: #666666;
+        }
+        .content .buttons .btn-secondary:hover {
+            background-color: #f0f0f0;
+        }
+        .image-container {
+            position: relative;
+            background: linear-gradient(45deg, #72aae3, #4d84e3);
+            border-radius: 50%;
+            padding: 20px;
+        }
+        .image-container img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+        .image-container .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #7f99f5, #7472f0);
+            opacity: 0.7;
+            z-index: -1;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image">
+        <div class="overlay"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">AIRKOS</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Destinacionet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hotelet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Këshilla</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rishikime</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+<br>
+        <!-- Main Content Container -->
+        <div class="content-container">
+            <!-- Main Content -->
+            <div class="content">
+                <h1>AIRKOS<br>AGJENCIA E UDHËTIMEVE</h1>
+                <hr>
+                <p>Airkos është shoqëruesi juaj i besueshëm për udhëtime në destinacione unike dhe vende të pazbuluara.</p>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-custom btn-book">REZERVO TANI</a>
+                    <a href="#" class="btn btn-custom btn-destinations">DESTINACIONET</a>
+                </div>
+            </div>
+          
+            <!-- Signup Form -->
+            <div class="col-lg-4">
+                <div class="signup-form shadow-lg">
+                    <h3 class="mb-3">Regjistrohu për ofertat tona</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Emri</label>
+                            <input type="text" class="form-control" id="name" placeholder="Emri" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Fjalëkalimi</label>
+                            <input type="password" class="form-control" id="password" placeholder="Fjalëkalimi" required>
+                        </div>
+                        <button type="submit" class="btn btn-secondary w-100">Regjistrohu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <body>
+        <div class="header">
+         <h1>
+          We've got you covered
+         </h1>
+         <h3>
+          Most popular tours
+         </h3>
+        </div>
+        <div class="container mt-5">
+         <div class="row">
+          <div class="col-md-4">
+           <div class="card position-relative">
+            <img alt="Scenic view of Vietnam with mountains and a lake" class="card-img-top" height="400" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-p5MpWprDQ6GCyneJPQh2aS4j.png?st=2024-09-26T17%3A17%3A19Z&amp;se=2024-09-26T19%3A17%3A19Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-26T18%3A17%3A19Z&amp;ske=2024-09-27T18%3A17%3A19Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=d28qibTO5Ysem%2By%2BoYLRgrfewF90Br6UuSi/tzgPdaw%3D" width="600"/>
+            <div class="price-tag">
+             Vietnam $1200
+            </div>
+            <div class="number">
+           
+            </div>
+            <div class="card-body">
+             <p class="card-text">
+              Vietnam is the easternmost country on the Southeast Asian Indochinese Peninsula. With an estimated 95.5 million inhabitants as of 2018, it is the 15th most populous country in the world.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-4">
+           <div class="card position-relative">
+            <img alt="Scenic view of Peru with mountains and ancient ruins" class="card-img-top" height="400" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-mlNWoHXL1SFgeXTbuMGDNxLJ.png?st=2024-09-26T17%3A17%3A19Z&amp;se=2024-09-26T19%3A17%3A19Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-26T18%3A07%3A17Z&amp;ske=2024-09-27T18%3A07%3A17Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=dqmoqUTcbkWGV/V51aOntaCLdWi3knWPmVuTdHlbFQ4%3D" width="600"/>
+            <div class="price-tag">
+             Peru $1300
+            </div>
+            <div class="number">
+             
+            </div>
+            <div class="card-body">
+             <p class="card-text">
+              Peru is a country in western South America. It is bordered in the north by Ecuador, Colombia, in the east by Brazil, in the southeast by Bolivia, in the south by Chile, in the west by the Pc. Ocean.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-4">
+           <div class="card position-relative">
+            <img alt="Scenic view of Iceland with a rugged vehicle and a sunset" class="card-img-top" height="400" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-ZGN0EvOdkZVYRjHRHG6uJnhL.png?st=2024-09-26T17%3A17%3A26Z&amp;se=2024-09-26T19%3A17%3A26Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-26T18%3A12%3A05Z&amp;ske=2024-09-27T18%3A12%3A05Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=qe3kWtwsG/T9u/fdbfvwUgQC0mL89J5hhCN%2BZmOoySI%3D" width="600"/>
+            <div class="price-tag">
+             Iceland $1400
+            </div>
+            <div class="number">
+             
+            </div>
+            <div class="card-body">
+             <p class="card-text">
+              Iceland is a Nordic island country in the North Atlantic, with a population of 360,390 and an area of 103,000 km2, making it the most sparsely populated country in Europe.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="footer mt-5">
+   
+
+   
+     <br>
+     <div class="container">
+        <div class="content">
+         <p>
+          Only this month, travel to Rome with a special deal. Rome is the capital city and a special comune of Italy (named Comune di Roma Capitale). Rome also serves as the capital of the Lazio region. With 2,872,800 residents in 1,285 km2 (496.1 sq mi), it is also the country's most populated comune.
+         </p>
+         <div class="highlight">
+          <span>
+           |
+          </span>
+          TOP DEAL 50% OFF
+         </div>
+         <p>
+          It is the fourth most populous city in the European Union by population within city limits. It is the centre of the Metropolitan City of Rome, which has a population of 4,355,725 residents, thus making it the most populous metropolitan city in Italy.
+         </p>
+         <div class="buttons">
+          <button class="btn btn-primary">
+           BOOK NOW
+          </button>
+          <button class="btn btn-secondary">
+           MORE OFFERS
+          </button>
+         </div>
+        </div>
+        <div class="image-container">
+         <img alt="Image of the Colosseum in Rome with an artistic overlay" height="300" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-kJLtX8tFrj0hVGmm9LLRoT2J.png?st=2024-09-26T17%3A30%3A27Z&amp;se=2024-09-26T19%3A30%3A27Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-26T18%3A10%3A38Z&amp;ske=2024-09-27T18%3A10%3A38Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=T8yjf3ODrBnxbSyptgTSNWHNrxwL/zIsM2CDez7quYo%3D" width="300"/>
+         <div class="overlay">
+         </div>
+        </div>
+       </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
